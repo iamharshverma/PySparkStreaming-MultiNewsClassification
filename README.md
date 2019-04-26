@@ -248,7 +248,7 @@ The news classification is done using the spark streams by creating a streaming 
 At run Time Both shows overall performance and Individual Spark Stream Performance.
 
 **Classification and Evaluation Output on Streaming Data :**
-![Screenshot](Output/Output_Screenshot/Screen Shot 2019-04-12 at 8.12.31 PM.png)
+![Screenshot](Output/Output_Screenshot/Screen%20Shot%202019-04-12%20at%208.12.31%20PM.png)
 ![Screenshot](Output/Output_Screenshot/Screen Shot 2019-04-12 at 8.12.41 PM.png)
 ![Screenshot](Output/Output_Screenshot/Screen Shot 2019-04-12 at 8.13.19 PM.png)
 
