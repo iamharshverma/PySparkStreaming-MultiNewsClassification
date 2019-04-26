@@ -42,14 +42,14 @@ Run: python3 stream_producer_batch.py
 
 8) Start the Streaming Data Classifier in spark using below command:
 
-**spark-submit --jars /Users/harshverma/Downloads/spark-streaming-kafka-0-8-assembly_2.11-2.4.1.jar ~/PycharmProjects/SparkStreamNewsDataClassification/src/StreamingNewsClassification.py
+**spark-submit --jars /Users/harshverma/Downloads/spark-streaming-kafka-0-8-assembly_2.11-2.4.1.jar ~/PycharmProjects/SparkStreamNewsDataClassification/src/StreamingNewsClassification.py**
 
 9) Check Batch Streaming Classification output, Multiclassification Metrics, Performance of both classifiers in console
 
 
 Model Train and Metrics Evaluation Output :
 
-**Pipeline Output:
+**Pipeline Output:**
 
 +---+-----------------+--------------------+
 |_c0|              _c1|                 _c2|
@@ -156,14 +156,14 @@ year,...|(3000,[8,15,24,63...|(3000,[8,15,24,63...|  3.0|
 only showing top 20 rows
 
 
-**Dataset Count:
+**Dataset Count:**
 
-**Training Dataset Count: 22757
+**Training Dataset Count: 22757**
 
-**Test Dataset Count: 5684
+**Test Dataset Count: 5684**
 
 
-**Logistic Classification Output:
+**Logistic Classification Output:**
 
 19/04/12 19:21:09 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
 
@@ -185,15 +185,15 @@ only showing top 20 rows
 +------------------------------+-----+------------------------------+-----+----------+
 only showing top 10 rows
 
-**Test Error for Logistic Regression :3.6985719078893364%
+**Test Error for Logistic Regression :3.6985719078893364%**
 
-**Test Accuracy for Logistic Regression :96.30142809211067%
+**Test Accuracy for Logistic Regression :96.30142809211067%**
 
-**Test weightedRecall for Logistic Regression :0.9623504574243491
+**Test weightedRecall for Logistic Regression :0.9623504574243491**
 
-**Test weightedPrecision for Logistic Regression :0.9691435850273702
+**Test weightedPrecision for Logistic Regression :0.9691435850273702**
 
-**Test f1 score for Logistic Regression :0.9630142809211066
+**Test f1 score for Logistic Regression :0.9630142809211066**
 
 19/04/12 19:22:46 WARN TaskSetManager: Stage 112 contains a task of very large size (821 KB). The maximum recommended task size is 100 KB.
 Logistic Classification Model Successfully trained and saved in project Output directory
@@ -218,36 +218,36 @@ Logistic Classification Model Successfully trained and saved in project Output d
 +------------------------------+-----+------------------------------+-----+----------+
 only showing top 10 rows
 
-**Test Error for Naive Bayes :1.2560765014749453%
+**Test Error for Naive Bayes :1.2560765014749453%**
 
-**Test Accuracy for Naive Bayes :98.74392349852505%
+**Test Accuracy for Naive Bayes :98.74392349852505%**
 
-**Test weightedRecall for Naive Bayes :0.9811752287121748
+**Test weightedRecall for Naive Bayes :0.9811752287121748**
 
-**Test weightedPrecision for Naive Bayes :0.9945375621234787
+**Test weightedPrecision for Naive Bayes :0.9945375621234787**
 
-**Test f1 score for Naive Bayes :0.9874392349852505
+**Test f1 score for Naive Bayes :0.9874392349852505**
 
 Naive Bayes Model Successfully trained and saved in project Output directory
 
 Process finished with exit code 0
 
 
-**Conclusion:
+**Conclusion:**
 
 The news classification is done using the spark streams by creating a streaming direct stream in spark. For a batch of news articles, it classifies the news type.
 
-**Accuracy on Streaming Test Data: 15-20% due to less training data.
+**Accuracy on Streaming Test Data: 15-20% due to less training data.**
 
-**Accuracy on Train/Test Data with 80-20 split:->
+**Accuracy on Train/Test Data with 80-20 split:->**
 
-**Logistic Classification Model: 96.3
+**Logistic Classification Model: 96.3**
 
-**Naïve Bayes Classification Model: 98.7
+**Naïve Bayes Classification Model: 98.7**
 
 At run Time Both shows overall performance and Individual Spark Stream Performance.
 
-**References:
+**References:**
 
 https://spark.apache.org/docs/latest/ml-decision-tree.html
 
