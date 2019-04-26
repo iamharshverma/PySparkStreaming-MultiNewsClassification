@@ -1,0 +1,24 @@
+Simply type the following command on your command prompt to run the stream_producer script:
+
+python3 stream_producer.py API-key fromDate toDate
+Ex: python3 stream_producer.py 405cb3e5-b364-4df8-9f4a-905210534c1d 2019-01-3 2019-03-24
+
+
+Start Zookeper and Kafka :
+
+zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties & kafka-server-start /usr/local/etc/kafka/server.properties
+
+Create Kafka Direct Stream Topic :
+
+kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic guardian2stream
+
+
+Get the Spark Streaming jar from :
+https://search.maven.org/artifact/org.apache.spark/spark-streaming-kafka-0-8-assembly_2.11/2.4.1/jar
+
+Search : org.apache.spark:spark-streaming-kafka-0-8-assembly_2.11:2.4.1 and Download
+
+
+Start the kafka Streaming to Created Topic :
+
+spark-submit --jars /Users/harshverma/Downloads/spark-streaming-kafka-0-8-assembly_2.11-2.4.1.jar ~/PycharmProjects/SparkStreamNewsDataClassification/src/StreamingNewsClassification.py
