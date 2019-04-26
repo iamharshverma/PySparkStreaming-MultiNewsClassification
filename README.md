@@ -4,10 +4,11 @@ The Program trains a pyspark MLLib Pipeline model with Tokenizer, stop word remo
 
 Pipeline model with Tokenizer, stop word remover, Labialize, TF-IDF, vectorizer and two classifiers i.e. Logistic Regression and Naïve Bayes. Then it compares result of both classifier(Logistic and Naïve Bayes) on spark streaming data.
 
-#Dataset : 
+**Dataset : 
+
 The Consumer News Dataset file is present data folder with name: news_data2.csv or downloadable from link https://drive.google.com/file/d/1p6kMERqY76EWDQ1OsDV6KVFDnCVc61Fn/view?usp=sharing
 
-#How to Execute and Run Project :
+**How to Execute and Run Project :
 
 1) Execute the following command on your command prompt to run the stream_producer script:
 
@@ -29,7 +30,7 @@ Run: python3 StreamingNewsClassification.py
 
 5) Create Kafka Direct Stream Topic "guardian2stream":
 
-kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic guardian2stream
+**kafka-topics --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic guardian2stream
 
 6) Get the Spark Streaming jar from :
 https://search.maven.org/artifact/org.apache.spark/spark-streaming-kafka-0-8-assembly_2.11/2.4.1/jar
@@ -40,25 +41,16 @@ Search : org.apache.spark:spark-streaming-kafka-0-8-assembly_2.11:2.4.1 and Down
 Run: python3 stream_producer_batch.py
 
 8) Start the Streaming Data Classifier in spark using below command:
-spark-submit --jars /Users/harshverma/Downloads/spark-streaming-kafka-0-8-assembly_2.11-2.4.1.jar ~/PycharmProjects/SparkStreamNewsDataClassification/src/StreamingNewsClassification.py
+
+**spark-submit --jars /Users/harshverma/Downloads/spark-streaming-kafka-0-8-assembly_2.11-2.4.1.jar ~/PycharmProjects/SparkStreamNewsDataClassification/src/StreamingNewsClassification.py
 
 9) Check Batch Streaming Classification output, Multiclassification Metrics, Performance of both classifiers in console
 
 
 Model Train and Metrics Evaluation Output :
 
-#Pipeline Output:
+**Pipeline Output:
 
-/Users/harshverma/anaconda3/bin/python /Users/harshverma/PycharmProjects/SparkStreamNewsDataClassification/src/NewsClassification.py
-WARNING: An illegal reflective access operation has occurred
-WARNING: Illegal reflective access by org.apache.spark.unsafe.Platform (file:/Users/harshverma/anaconda3/lib/python3.6/site-packages/pyspark/jars/spark-unsafe_2.11-2.4.1.jar) to method java.nio.Bits.unaligned()
-WARNING: Please consider reporting this to the maintainers of org.apache.spark.unsafe.Platform
-WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
-WARNING: All illegal access operations will be denied in a future release
-19/04/12 19:20:32 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
-Setting default log level to "WARN".
-To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 +---+-----------------+--------------------+
 |_c0|              _c1|                 _c2|
 +---+-----------------+--------------------+
@@ -68,6 +60,7 @@ To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLeve
 | 26|b'Madeline Miller|b'Madeline Miller...|
 | 23|          b'Joaqu|b'Joaqu\xc3\xadn ...|
 +---+-----------------+--------------------+
+
 only showing top 5 rows
 
 root
@@ -136,6 +129,7 @@ only showing top 20 rows
 |b'The Other Ameri...|(3000,[3,14,18,21...|
 |b'Brexit: Theresa...|(3000,[18,22,23,2...|
 +--------------------+--------------------+
+
 only showing top 20 rows
 
 +-----+--------------------+--------------------+--------------------+--------------------+--------------------+--------------------+-----+
@@ -162,16 +156,19 @@ year,...|(3000,[8,15,24,63...|(3000,[8,15,24,63...|  3.0|
 only showing top 20 rows
 
 
-Dataset Count:
+**Dataset Count:
 
-Training Dataset Count: 22757
-Test Dataset Count: 5684
+**Training Dataset Count: 22757
+
+**Test Dataset Count: 5684
 
 
-Logistic Classification Output:
+**Logistic Classification Output:
 
 19/04/12 19:21:09 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+
 19/04/12 19:21:09 WARN BLAS: Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+
 +------------------------------+-----+------------------------------+-----+----------+
 |                          text|index|                   probability|label|prediction|
 +------------------------------+-----+------------------------------+-----+----------+
@@ -188,18 +185,22 @@ Logistic Classification Output:
 +------------------------------+-----+------------------------------+-----+----------+
 only showing top 10 rows
 
-Test Error for Logistic Regression :3.6985719078893364%
-Test Accuracy for Logistic Regression :96.30142809211067%
-Test weightedRecall for Logistic Regression :0.9623504574243491
-Test weightedPrecision for Logistic Regression :0.9691435850273702
-Test f1 score for Logistic Regression :0.9630142809211066
+**Test Error for Logistic Regression :3.6985719078893364%
+
+**Test Accuracy for Logistic Regression :96.30142809211067%
+
+**Test weightedRecall for Logistic Regression :0.9623504574243491
+
+**Test weightedPrecision for Logistic Regression :0.9691435850273702
+
+**Test f1 score for Logistic Regression :0.9630142809211066
 
 19/04/12 19:22:46 WARN TaskSetManager: Stage 112 contains a task of very large size (821 KB). The maximum recommended task size is 100 KB.
 Logistic Classification Model Successfully trained and saved in project Output directory
 
 
 
-Naïve Bayes Classification Output:
+**Naïve Bayes Classification Output:
 
 +------------------------------+-----+------------------------------+-----+----------+
 |                          text|index|                   probability|label|prediction|
@@ -217,36 +218,40 @@ Naïve Bayes Classification Output:
 +------------------------------+-----+------------------------------+-----+----------+
 only showing top 10 rows
 
-Test Error for Naive Bayes :1.2560765014749453%
-Test Accuracy for Naive Bayes :98.74392349852505%
-[Stage 148:======================================>               (25 + 10) / 35]Test weightedRecall for Naive Bayes :0.9811752287121748
-Test weightedPrecision for Naive Bayes :0.9945375621234787
-Test f1 score for Naive Bayes :0.9874392349852505
+**Test Error for Naive Bayes :1.2560765014749453%
 
-19/04/12 19:24:40 WARN TaskSetManager: Stage 151 contains a task of very large size (821 KB). The maximum recommended task size is 100 KB.
+**Test Accuracy for Naive Bayes :98.74392349852505%
+
+**Test weightedRecall for Naive Bayes :0.9811752287121748
+
+**Test weightedPrecision for Naive Bayes :0.9945375621234787
+
+**Test f1 score for Naive Bayes :0.9874392349852505
+
 Naive Bayes Model Successfully trained and saved in project Output directory
 
 Process finished with exit code 0
 
 
-
-#Classification and Evaluation Output on Streaming Data :
-
-Classifying Streaming News Direct Stream: Output :
-
-#Conclusion:
+**Conclusion:
 
 The news classification is done using the spark streams by creating a streaming direct stream in spark. For a batch of news articles, it classifies the news type.
-Accuracy on Streaming Test Data: 15-20% due to less training data.
-Accuracy on Train/Test Data with 80-20 split:->
-Logistic Classification Model: 96.3
-Naïve Bayes Classification Model: 98.7
+
+**Accuracy on Streaming Test Data: 15-20% due to less training data.
+
+**Accuracy on Train/Test Data with 80-20 split:->
+
+**Logistic Classification Model: 96.3
+
+**Naïve Bayes Classification Model: 98.7
+
 At run Time Both shows overall performance and Individual Spark Stream Performance.
 
-#References:
-•	https://spark.apache.org/docs/latest/ml-decision-tree.html
-•	https://spark.apache.org/docs/2.2.0/mllib-naive-bayes.html
-•	https://towardsdatascience.com/multi-class-text-classification-with-pyspark-7d78d022ed35
-•	https://blog.insightdatascience.com/spark-pipelines-elegant-yet-powerful-7be93afcdd42
-•	https://scalac.io/scala-spark-ml-machine-learning-introduction/
-•	https://towardsdatascience.com/multi-class-text-classification-with-pyspark-7d78d022ed35
+**References:
+
+https://spark.apache.org/docs/latest/ml-decision-tree.html
+https://spark.apache.org/docs/2.2.0/mllib-naive-bayes.html
+https://towardsdatascience.com/multi-class-text-classification-with-pyspark-7d78d022ed35
+https://blog.insightdatascience.com/spark-pipelines-elegant-yet-powerful-7be93afcdd42
+https://scalac.io/scala-spark-ml-machine-learning-introduction/
+https://towardsdatascience.com/multi-class-text-classification-with-pyspark-7d78d022ed35
