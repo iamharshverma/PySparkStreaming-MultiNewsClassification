@@ -2,8 +2,6 @@
 
 The Project trains a pyspark MLLib Pipeline model with Tokenizer, stop word remover, Labialize, TF-IDF, vectorizer and two classifiers i.e. Logistic Regression and Naïve Bayes. Then it compares result of both classifier(Logistic and Naïve Bayes) on spark streaming data for multiple news type classification.
 
-Pipeline model with Tokenizer, stop word remover, Labialize, TF-IDF, vectorizer and two classifiers i.e. Logistic Regression and Naïve Bayes. Then it compares result of both classifier(Logistic and Naïve Bayes) on spark streaming data.
-
 **Dataset :** 
 
 The Consumer News Dataset file is present data folder with name: news_data2.csv or downloadable from link https://drive.google.com/file/d/1p6kMERqY76EWDQ1OsDV6KVFDnCVc61Fn/view?usp=sharing
